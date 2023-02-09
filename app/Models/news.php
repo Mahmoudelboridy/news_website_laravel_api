@@ -12,8 +12,11 @@ class news extends Model
     protected $fillable=[
         "title",
         "image",
+        "id",
+        "created_at",
         "content",
-        "created_at"
+        "category"
+
     ];
     protected $hidden=[
         "updated_at"

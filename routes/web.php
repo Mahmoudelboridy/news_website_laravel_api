@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\mnrController;
+use App\Http\Controllers\newcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('store',[mnrController::class,'vie']);
-Route::post('/store',[mnrController::class,'store'])->name('store');
-Route::get('/ard',[mnrController::class,'ard']);
-Route::get('nnew/{id}',[mnrController::class,'nnew']);
+Route::post('/create', [newcontroller::class, 'createn'])->name('create');
+Route::get('/all', [newcontroller::class, 'wget']);
+Route::get('/tech', [newcontroller::class, 'wgett']);
+Route::get('/sport', [newcontroller::class, 'wgets']);
+Route::get('/politics', [newcontroller::class, 'wgetp']);

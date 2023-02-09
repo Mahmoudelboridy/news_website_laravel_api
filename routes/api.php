@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\mnrController;
+use App\Http\Controllers\newcontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/display',[mnrController::class,'ven']);
+
+Route::get('/', [newcontroller::class, 'get']);
+Route::get('/Tech', [newcontroller::class, 'gett']);
+Route::get('/sport', [newcontroller::class, 'gets']);
+Route::get('/politics', [newcontroller::class, 'getp']);
+Route::post('/create', [newcontroller::class, 'create'])->name('cretae');
