@@ -8,14 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class news extends Model
 {
     use HasFactory;
+    public $table="news";
     protected $fillable=[
-        "id",
         "title",
-        "created_at",
-        "description",
         "image",
-        "category"
-
+        "content",
+        "created_at"
     ];
     protected $hidden=[
         "updated_at"

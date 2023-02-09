@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\concontroller;
+use App\Http\Controllers\mnrController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[concontroller::class,'index']);
-Route::get('/bootstrap',[concontroller::class,'boot']);
-Route::get('/admin',[concontroller::class,'admin']);
-Route::post('/admin',[concontroller::class,'add'])->name('add');
-Route::get('/nnew/{category}',[concontroller::class,'ard']);
-Route::get('nnew/go/{id}',[concontroller::class,'go']);
-Route::get('/search',[concontroller::class,'search'])->name('search');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('store',[mnrController::class,'vie']);
+Route::post('/store',[mnrController::class,'store'])->name('store');
+Route::get('/ard',[mnrController::class,'ard']);
+Route::get('nnew/{id}',[mnrController::class,'nnew']);
