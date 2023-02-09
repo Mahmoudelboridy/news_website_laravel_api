@@ -1,12 +1,13 @@
-<form action="{{ route('create') }}" enctype="multipart/form-data" method="POST">
-    @csrf
-title<input type="text" name="title" />
-content<input type="text" name="content" />
-image<input type="file" name="image" />
-<select name="category">
-    <option value="Tech">Tech</option>
-    <option value="sport">sport</option>
-    <option value="politics">politics</option>
-</select>
-<button name="save">save</button>
-</form>
+
+@extends('bootstrap')
+@section('title','home page')
+@section('content')
+@foreach ($posts as $post )
+<br><br>
+    <a style="text-decoration: none" class="fs-3" href="nnew/go/{{ $post->id  }}">{{ $post->title }}</a>
+    <br><br>
+    <img style="width: 400px;height:400px;" src="{{$post->image}}" />
+    <br><br>
+@endforeach
+@endsection
+

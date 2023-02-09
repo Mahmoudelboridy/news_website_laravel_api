@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\newcontroller;
+use App\Http\Controllers\concontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::post('/create', [newcontroller::class, 'createn'])->name('create');
-Route::get('/all', [newcontroller::class, 'wget']);
-Route::get('/tech', [newcontroller::class, 'wgett']);
-Route::get('/sport', [newcontroller::class, 'wgets']);
-Route::get('/politics', [newcontroller::class, 'wgetp']);
+Route::get('/',[concontroller::class,'index']);
+Route::get('/bootstrap',[concontroller::class,'boot']);
+Route::get('/admin',[concontroller::class,'admin']);
+Route::post('/admin',[concontroller::class,'add'])->name('add');
+Route::get('/nnew/{category}',[concontroller::class,'ard']);
+Route::get('nnew/go/{id}',[concontroller::class,'go']);
+Route::get('/search',[concontroller::class,'search'])->name('search');
